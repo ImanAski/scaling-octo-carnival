@@ -1,10 +1,23 @@
+<script setup lang="ts">
+import { fa_ir } from "@nuxt/ui/locale";
+
+useHead({
+  htmlAttrs: {
+    lang: fa_ir.code,
+    dir: fa_ir.dir
+  }
+})
+</script>
+
 <template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <UApp :locale="fa_ir">
+    <div>
+      <NuxtRouteAnnouncer />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
+    </div>
+  </UApp>
 </template>
 
 <style>
