@@ -10,17 +10,19 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: route.path.startsWith('/products')
   },
   {
-    label: 'دسته بندی',
-    to: '/docs/components',
-    active: route.path.startsWith('/docs/components')
+    label: 'وبلاگ',
+    to: '/blog',
+    active: route.path.startsWith('/blog')
   },
   {
     label: 'درباره ما',
     to: '/about',
+    active: route.path.startsWith('/about')
   },
   {
     label: 'تماس با ما',
     to: '/contact',
+    active: route.path.startsWith('/contact')
   }
 ])
 </script>
@@ -35,7 +37,13 @@ const items = computed<NavigationMenuItem[]>(() => [
 
     <template #right>
       <UColorModeButton />
-      <UContentSearchButton />
+      <UIcon name="cart" />
+      <UDrawer direction="left">
+        <UButton>
+          ورود
+        </UButton>
+
+      </UDrawer>
     </template>
   </UHeader>
 </template>

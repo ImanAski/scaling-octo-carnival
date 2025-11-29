@@ -3,7 +3,13 @@
 </script>
 
 <template>
-  <div>
-    <h1>About me</h1>
-  </div>
+  <UPage>
+    <UPageHero title="درباره ما" />
+
+    <UPageBody>
+      <UContainer>
+
+      </UContainer>
+    </UPageBody>
+  </UPage>
 </template>

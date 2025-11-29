@@ -1,5 +1,9 @@
 <template>
-  <div>
-    <h1>Product Index</h1>
-  </div>
+  <UPage>
+    <UPageHero title="فروشگاه" />
+
+    <UPageBody>
+
+    </UPageBody>
+  </UPage>
 </template>

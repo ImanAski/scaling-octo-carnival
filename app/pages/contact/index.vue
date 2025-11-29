@@ -1,5 +1,11 @@
 <template>
-  <div>
-    <h1>Contact Us</h1>
-  </div>
+  <UPage>
+    <UPageHero title="تماس با ما" />
+
+    <UPageBody>
+      <UContainer>
+
+      </UContainer>
+    </UPageBody>
+  </UPage>
 </template>
