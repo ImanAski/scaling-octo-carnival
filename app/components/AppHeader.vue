@@ -3,6 +3,8 @@ import type { NavigationMenuItem } from '@nuxt/ui'
 
 const route = useRoute()
 
+const searchQuery = ref<string | null>(null);
+
 const items = computed<NavigationMenuItem[]>(() => [
   {
     label: 'فروشگاه',
@@ -28,22 +30,28 @@ const items = computed<NavigationMenuItem[]>(() => [
 </script>
 
 <template>
-  <UHeader>
-    <template #title>
-      <Logo class="h-6 w-auto" />
+  <UHeader mode="slideover">
+    <UFieldGroup>
+      <UInput class="max-w-6xl" placeholder="جستجو" v-model="searchQuery" />
+      <UButton icon="i-lucide-search" variant="outline">جستجو</UButton>
+    </UFieldGroup>
+
+    <template #content>
+      <UNavigationMenu :items="items" orientation="vertical" />
     </template>
 
-    <UNavigationMenu :items="items" />
-
     <template #right>
-      <UColorModeButton />
-      <UIcon name="cart" />
-      <UDrawer direction="left">
-        <UButton>
-          ورود
-        </UButton>
+      <NavSearch />
 
-      </UDrawer>
+      <NavShoppingCart />
+
+      <UColorModeButton />
+
+      <NavAuth />
+    </template>
+
+    <template #body>
+      <UNavigationMenu :items="items" orientation="vertical" />
     </template>
   </UHeader>
 </template>
